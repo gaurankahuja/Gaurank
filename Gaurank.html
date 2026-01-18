@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurank Ahuja | Portfolio</title>
+    <meta name="description" content="Portfolio of Gaurank Ahuja, Economics student and Financial Research Intern.">
+    <style>
+        /* CORE VARIABLES */
+        :root {
+            --bg-color: #FAFAF9;
+            --surface-color: #FFFFFF;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --accent-color: #2A6F97; /* Muted Slate Teal */
+            --accent-light: #E0F2FE;
+            --border-radius: 12px;
+            --spacing-unit: 1.5rem;
+            --max-width: 1000px;
+            --transition: all 0.3s ease;
+        }
+
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* LAYOUT UTILITIES */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(42, 111, 151, 0.2);
+        }
+
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .education-card {
+            background: var(--surface-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .edu-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            display: block;
+        }
+
+        .edu-school {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .edu-grade {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 0.25rem;
+            display: inline-block;
+            background: var(--accent-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* EXPERIENCE GRID */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--surface-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .card-role {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-company {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .card-date {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .card-body ul {
+            padding-left: 1.2rem;
+        }
+
+        .card-body li {
+            list-style-type: disc;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .card-body li::marker {
+            color: var(--accent-color);
+        }
+
+        /* SKILLS SECTION */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .skill-group h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tag {
+            background: var(--surface-color);
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* HOW I WORK */
+        .methodology {
+            background-color: var(--surface-color);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            max-width: 800px;
+        }
+
+        .methodology p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .methodology p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CONTACT */
+        .contact-methods {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 2px;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--accent-color);
+            border-bottom-width: 2px;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <div class="container">
+        <header class="hero">
+            <h1>Gaurank Ahuja</h1>
+            <p>Economics Student & Financial Research Analyst specializing in valuation models and strategic insights.</p>
+            <a href="#contact" class="hero-btn">Get in touch</a>
+        </header>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-title">About Me</span>
+                <h2 class="section-subtitle">Financial Analysis & Economics</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am an Economics Honours student at Hindu College, University of Delhi, currently maintaining a CGPA of 8.59. My academic background gives me a solid grounding in economic theory, which I apply directly to corporate finance and research.</p>
+                    <p>My work involves building detailed financial models and analyzing market data to support investment decisions. Whether I am researching space-tech companies or forecasting chemical industry growth, I aim to provide clear, actionable insights.</p>
+                </div>
+                
+                <div class="education-card">
+                    <div class="edu-item">
+                        <span class="edu-degree">BA (Hons.) Economics</span>
+                        <span class="edu-school">Hindu College, University of Delhi</span>
+                        <span class="edu-grade">8.59 CGPA</span>
+                    </div>
+                    <div class="edu-item">
+                        <span class="edu-degree">Class XII (Commerce)</span>
+                        <span class="edu-school">Nirmal Higher Secondary School</span>
+                        <span class="edu-grade">92.8%</span>
+                    </div>
+                    <div class="edu-item">
+                        <span class="edu-degree">NISM XV Research Analyst</span>
+                        <span class="edu-school">SEBI Certification</span>
+                        <span class="edu-grade">2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-title">Experience</span>
+                <h2 class="section-subtitle">Internships & Roles</h2>
+            </div>
+            <div class="card-grid">
+                
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-role">Financial Research Intern</div>
+                        <div class="card-company">Shinde Chemicals Pvt. Ltd.</div>
+                        <span class="card-date">Oct 2025 – Present</span>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Worked on a 3-statement financial model with 5-year forecasts to help plan a suitable fundraise.</li>
+                            <li>Currently running DCF valuation with sensitivity checks to estimate a realistic valuation for investor discussions.</li>
+                            <li>Researching comparable companies to validate valuation multiples and improve key assumptions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-role">Business Research & Valuation Intern</div>
+                        <div class="card-company">AIQ Space Ventures</div>
+                        <span class="card-date">Jul 2025 – Sep 2025</span>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Delivered strategic insights to senior management by conducting research on 30+ space-tech companies.</li>
+                            <li>Supported investment decisions by building DCF and CCA valuation models, benchmarking against 5+ early-stage startups.</li>
+                            <li>Presented 10+ structured reports and financial models directly to the CEO.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-role">Growth Advisory</div>
+                        <div class="card-company">Crowwd</div>
+                        <span class="card-date">Sep 2025 – Present</span>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Supporting a Brussels-based financial education platform by strategizing user onboarding.</li>
+                            <li>Analysing platform funnel metrics to identify drop-off points and propose ideas to improve conversion.</li>
+                            <li>Designing outreach ideas to expand the user base across universities.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-role">Policy Associate</div>
+                        <div class="card-company">YLAC Policy Collective</div>
+                        <span class="card-date">Oct 2025 – Present</span>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Led a team of 10 in a policy ideation project, conducting structured research.</li>
+                            <li>Explored current finance and economic policy issues and supported the organisation of a student-focused event.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-title">Capabilities</span>
+                <h2 class="section-subtitle">Skills & Tools</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h3>Technical & Financial</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Financial Modeling</span>
+                        <span class="tag">DCF Valuation</span>
+                        <span class="tag">Excel (Advanced)</span>
+                        <span class="tag">R Programming</span>
+                        <span class="tag">Power BI</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Interpersonal & Leadership</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Team Leadership</span>
+                        <span class="tag">Communication</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Strategic Thinking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW I WORK SECTION -->
+    <section id="methodology">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-title">Methodology</span>
+                <h2 class="section-subtitle">How I Work</h2>
+            </div>
+            <div class="methodology">
+                <p>I approach financial analysis with a focus on data integrity and realistic assumptions. Whether preparing a valuation for a startup or analyzing economic policy, I prioritize structure and clarity.</p>
+                <p>I believe in thorough research to back every number. I use modern tools, including AI, where they help me work more clearly or efficiently, allowing me to focus on high-level strategy and decision-making.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-title">Contact</span>
+                <h2 class="section-subtitle">Let's Connect</h2>
+            </div>
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">I am open to internship opportunities in finance, research, and strategy.</p>
+            
+            <div class="contact-methods">
+                <a href="mailto:gaurank.ahuja@gmail.com" class="contact-link">gaurank.ahuja@gmail.com</a>
+                <a href="tel:7470567572" class="contact-link">7470567572</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT FOR SCROLL INTERACTION -->
+    <script>
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Subtle fade-in on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
